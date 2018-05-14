@@ -88,7 +88,7 @@ def read_parallel(source_filename: str,
             # skip segments that are too long
             continue
 
-        yield (source_ids.reverse(), target_ids)
+        yield (source_ids, target_ids)
 
 
 def pad_sequence(word_ids: List[int], pad_id: int, max_length: int) -> List[int]:
