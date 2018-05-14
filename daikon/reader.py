@@ -86,12 +86,8 @@ def read_parallel(source_filename: str,
             continue
         if (len(source_ids) > max_length) or (len(target_ids) > max_length):
             # skip segments that are too long
-            continue
-        source_ids = source_ids.reverse()
-        if source_ids == None:
-            continue
-        print(source_ids)   
-        yield (source_ids, target_ids)
+            continue 
+        yield (source_ids[::-1], target_ids)
 
 
 def pad_sequence(word_ids: List[int], pad_id: int, max_length: int) -> List[int]:
